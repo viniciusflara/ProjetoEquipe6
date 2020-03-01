@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap');   
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root{
+    height: 100%;
+}
+
+body{
+    background: black;
+    -webkit-font-smoothing: antialised;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100%;
+    position: relative;
+}
+
+body, input, button {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+:root
+{
+    --cores1: #0D0D0D;
+    --cores2: #731717;
+    --cores3: #9c030f;
+    --cores4: #FFC8BE;
+    --cores5: #D9D9D9;
+    --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+    --cor-degrade: linear-gradient(90deg, #0D0D0D 0%, black  100%);
+
+}
+
+.botao1{
+    background: var(--cores1);
+    background-clip: padding-box;
+    color: whitesmoke ;
+    transition: background 0.6 ease;
+    box-shadow: var(--box-shadow);
+    border-color:  var(--cor-degrade);
+
+}
+
+.botao1:hover{
+    background: whitesmoke;
+    background-clip: padding-box;
+    color: var(--cores1);
+    border-color: var(--cores1);
+}
+
+
+.botao2{
+    background: white;
+    background-clip: padding-box;
+    color: var(--cores1) ;
+    transition: background 0.6 ease;
+    box-shadow: var(--box-shadow);
+    border-color:  var(--cor-degrade);
+
+}
+
+.botao2:hover{
+    background: var(--cores1);
+    background-clip: padding-box;
+    color: white;
+    border-color: white;
+}
+
+.botao3{
+    background:transparent;
+    background-clip: padding-box;
+    color: white;
+    transition: background 0.6 ease;
+    box-shadow: var(--box-shadow);
+    border-color:  var(--cor-degrade);
+
+}
+
+.botao3:hover{
+    background: white;
+    background-clip: padding-box;
+    color: rgba(0,0,0,0.0);
+    border-color: transparent;
+}

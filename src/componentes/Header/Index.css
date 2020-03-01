@@ -1,0 +1,26 @@
+.Header #bulldog{
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 32px;
+}
+
+.Header .links{
+    max-width: fit-content;
+    margin-left: 25%;
+}
+
+.Header .links a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+.Header .links a.chosen,
+.Header .links a:hover{
+    color: var(--cores3);   
+}
+
+.Header .bandeiras img{
+    cursor: pointer;
+}
