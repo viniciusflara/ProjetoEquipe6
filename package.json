@@ -1,6 +1,6 @@
 {
-  "name": "bulldog",
-  "version": "0.1.0",
+  "name": "onlinebalcksmith",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",

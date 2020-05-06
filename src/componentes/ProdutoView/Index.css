@@ -1,0 +1,25 @@
+.ProdutoView {
+    background: white;
+    width: 100%;
+    margin: 0;
+}
+
+.ProdutoView .Filtro {
+    background: #414141;
+    display: flex;
+    border-radius: 20px;
+    width: 80%;
+    margin-top: 20px;
+
+}
+
+.ProdutoView .Filtro input {
+    border: none;
+    border-radius: 20px;
+}
+
+.ProdutoView .Filtro p,
+.ProdutoView .Filtro h3 {
+    color: white;
+    margin: 0;
+}
