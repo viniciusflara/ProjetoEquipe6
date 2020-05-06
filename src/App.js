@@ -2,7 +2,6 @@ import React from 'react';
 import './componentes/globals.css';
 import './script';
 
-import Footer from './componentes/Footer/Index';
 import Header from './componentes/Header/Index';
 
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
@@ -24,7 +23,6 @@ function App() {
           <Route path="/usercrud" exact component={UserCrud} />
         </Switch>
       </Router>
-      <Footer />
     </div>
   );
 }
