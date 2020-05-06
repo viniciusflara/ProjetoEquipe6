@@ -7,10 +7,10 @@ import Header from './componentes/Header/Index';
 
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 
-import Inicio from './componentes/Inicio/Index';
-import Contato from './componentes/Contato/Index';
-import Portifolio from './componentes/Portifolio/Index';
-import Quemsomos from './componentes/QuemSomos/Index';
+import Login from './componentes/Login/Index';
+import ProdutoCrud from './componentes/ProdutoCrud/Index';
+import ProdutoView from './componentes/ProdutoView/Index';
+import UserCrud from './componentes/UserCrud/Index';
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact component={Inicio} />
-          <Route path="/contato" exact component={Contato} />
-          <Route path="/portifolio" exact component={Portifolio} />
-          <Route path="/quem-somos" exact component={Quemsomos} />
+          <Route path="/" exact component={Login} />
+          <Route path="/produtocrud" exact component={ProdutoCrud} />
+          <Route path="/produtoview" exact component={ProdutoView} />
+          <Route path="/usercrud" exact component={UserCrud} />
         </Switch>
       </Router>
       <Footer />

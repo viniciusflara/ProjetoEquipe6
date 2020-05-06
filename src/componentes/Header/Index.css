@@ -3,6 +3,14 @@
     color: white;
     font-size: 32px;
 }
+.Header #bulldog img {
+    border-radius: 50%;
+    width: 10%;
+    margin-right: 10px;
+}
+.Header .navbar{
+    background: black;
+}
 
 .Header .links{
     max-width: fit-content;

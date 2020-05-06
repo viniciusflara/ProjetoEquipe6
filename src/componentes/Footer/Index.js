@@ -3,9 +3,9 @@ import './Index.css';
 
 function Footer(){
     return(
-        <di className="Footer">
+        <div className="Footer">
             <h1>Footer</h1>
-        </di>
+        </div>
     );
 }
 
