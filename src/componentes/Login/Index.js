@@ -1,11 +1,13 @@
 import React from 'react';
 import './Index.css';
+import Corpo from "./corpo";
+
 
 function Login(){
     return(
-        <di className="Login">
-            <h1>Login</h1>
-        </di>
+        <div class='container'>
+            <Corpo />
+        </div>
     );
 }
 
