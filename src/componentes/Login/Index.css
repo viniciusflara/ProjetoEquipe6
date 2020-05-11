@@ -1,33 +1,77 @@
-.todo-list {
-  background-color: white;
-  margin: auto;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #efefef;
-  box-shadow:
-  /* The top layer shadow */
-      0 1px 1px rgba(0,0,0,0.15),
-          /* The second layer */
-      0 10px 0 -5px #eee,
-          /* The second layer shadow */
-      0 10px 1px -4px rgba(0,0,0,0.15),
-          /* The third layer */
-      0 20px 0 -10px #eee,
-          /* The third layer shadow */
-      0 20px 1px -9px rgba(0,0,0,0.15);
-  padding: 30px;
-}
 
+  .Portifolio {
+    background: #1d1d1d;
+  }
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    background: #b3b3b389;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center
-}
+  .Portifolio button {
+    display: block;
+    background: #f85636;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: 100%;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color, border-color 0.2s;
+  }
+  
+  .Portifolio button:hover {
+    background-color: black;
+    color: white;
+    /*border-color:#ffe304;*/
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 
+                0 3px 6px rgba(0, 0, 0, 0.26);
+  }
 
+  .Portifolio button:active {
+    color: var(--cores3);
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-color: transparent;
+
+  }
+
+  .Portifolio button:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+  }
+
+  /*.Portifolio #card {
+    width: 18rem;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    align-items: center;
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+                 2px 2px 6px rgba(0, 0, 0, 0.8);
+  }*/
+
+  #card {
+    width: 80%;
+    /*background-color: #ffe304;*/
+    background: #1d1d1d;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    margin-bottom: 30px;
+    padding: 12px 16px;
+    border-radius: 40px;
+    color: #fff;
+    /*border: 2px solid black;*/
+    font-size: 18px;
+    color: whitesmoke;
+    transition: border-color 0.2s;
+    text-align: left;
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+                 2px 2px 6px rgba(0, 0, 0, 0.8);
+  }
+
+  * {
+    margin-left: auto;
+    margin-right: auto;
+  }
