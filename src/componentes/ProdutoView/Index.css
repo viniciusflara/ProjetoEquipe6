@@ -3,7 +3,9 @@
     width: 100%;
     margin: 0;
 }
-
+.ProdutoView .showFiltro {
+    display: none;
+}
 .ProdutoView .Filtro {
     background: #414141;
     display: flex;
@@ -11,6 +13,14 @@
     width: 80%;
     margin-top: 20px;
 
+}
+.ProdutoView .Filtro-Nome,
+.ProdutoView .Filtro-Material {
+    margin: 0;
+    width: 25%;
+}
+.ProdutoView .Filtro-Nome {
+    margin-left: 10px;
 }
 
 .ProdutoView .Filtro input {
@@ -22,4 +32,55 @@
 .ProdutoView .Filtro h3 {
     color: white;
     margin: 0;
+}
+.ProdutoView .buttonRow {
+    width: 100%;
+    display: flex;
+    
+}
+.ProdutoView .btnFiltro,
+.ProdutoView .btnAdicionar {
+    width: 15%;
+    border: none;
+    border-radius: 20px;
+    height: 15%;
+    background-color: #414141;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    outline: none; 
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    text-decoration: none;
+}
+.ProdutoView .btnFiltro:hover,
+.ProdutoView .btnAdicionar:hover {
+    background-color: black;
+}
+.ProdutoView .btnFiltro {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.ProdutoView .produtoTitulo {
+    display: flex;
+}
+.ProdutoView .produtoRow{
+    display: flex;
+}
+.ProdutoView .thead {
+    background-color: black;
+    color: white;
+}
+
+@media(max-width: 600px){
+    .ProdutoView .btnFiltro,
+    .ProdutoView .btnAdicionar {
+    width: 30%;
+    
+}
+
+    .ProdutoView .table th {
+        padding: 2px;
+}
 }
