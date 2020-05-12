@@ -35,28 +35,24 @@ function Lista({ data }) {
     );
 }
 
-function showFiltro(i) {
-    document.getElementsByClassName('showFiltro')[i].style.display = "block";
-    document.getElementsByClassName('btnFiltro')[i].innerHTML = "Fechar";
-    document.getElementsByClassName('btnFiltro')[i].onclick= () => { closeFiltro(i) };
-}
-function closeFiltro(i) {
-    console.log("Funcionou");
-    document.getElementsByClassName('showFiltro')[i].style.display = "none";
-    document.getElementsByClassName('btnFiltro')[i].innerHTML = "Filtro";
-    document.getElementsByClassName('btnFiltro')[i].onclick = () => { showFiltro(i) };
-}
 
 function ProdutoView() {
     const [data, setData] = useState(DATA);
-
+    const [filtro, setFiltro] = useState(false);
     const produtoList = data.map(data => <Lista key={data.id} data={data} />)
+    let textButton = '';
+
+    if(filtro) {
+        textButton = 'Fechar';
+    } else {
+        textButton = 'Filtro';
+    }
 
     return (
         <div className="ProdutoView">
-            <Filtro />
+            {filtro && <Filtro />}
             <div className="buttonRow">
-                <button className="btnFiltro" onClick={() => showFiltro(0)}>Filtro</button>
+                <button className="btnFiltro" onClick={() => {setFiltro(!filtro)}}>{textButton}</button>
                 <NavLink activeClassName="chosen" exact to="/produtocrud" className="btnAdicionar">+ Adicionar Produto</NavLink>
             </div>
             <table class="table">

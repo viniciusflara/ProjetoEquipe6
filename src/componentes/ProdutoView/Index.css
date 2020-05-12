@@ -3,9 +3,6 @@
     width: 100%;
     margin: 0;
 }
-.ProdutoView .showFiltro {
-    display: none;
-}
 .ProdutoView .Filtro {
     background: #414141;
     display: flex;
