@@ -42,7 +42,7 @@ function ProdutoView() {
     const produtoList = data.map(data => <Lista key={data.id} data={data} />)
     let textButton = '';
 
-    if(filtro) {
+    if (filtro) {
         textButton = 'Fechar';
     } else {
         textButton = 'Filtro';
@@ -50,11 +50,16 @@ function ProdutoView() {
 
     return (
         <div className="ProdutoView">
-            {filtro && <Filtro />}
+
             <div className="buttonRow">
-                <button className="btnFiltro" onClick={() => {setFiltro(!filtro)}}>{textButton}</button>
+                <div className="Filtro-Nome">
+                    <input type="text" placeholder="Buscar..." name="nome"></input>
+                </div>
+                <button className="btnFiltro" onClick={() => { setFiltro(!filtro) }}>{textButton}</button>
                 <NavLink activeClassName="chosen" exact to="/produtocrud" className="btnAdicionar">+ Adicionar Produto</NavLink>
             </div>
+
+            {filtro && <Filtro />}
             <table class="table">
                 <thead class="thead">
                     <tr>

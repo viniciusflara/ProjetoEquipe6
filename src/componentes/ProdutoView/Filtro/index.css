@@ -1,0 +1,26 @@
+.Filtro {
+    background: #414141;
+    display: flex;
+    border-radius: 20px;
+    width: 100%;
+    margin: 5px 0 10px;
+}
+
+.Filtro .Filtro-Tipo,
+.Filtro .Filtro-Subtipo {
+    display: flex;
+    padding: 20px;
+    
+}
+
+.Filtro p {
+    padding: 10px;
+    color: white;
+    margin: 0;
+}
+.Filtro h3 {
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    margin: 0;
+}

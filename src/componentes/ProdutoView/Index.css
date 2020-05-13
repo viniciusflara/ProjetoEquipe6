@@ -3,14 +3,14 @@
     width: 100%;
     margin: 0;
 }
-.ProdutoView .Filtro {
+/* .ProdutoView .Filtro {
     background: #414141;
     display: flex;
     border-radius: 20px;
     width: 80%;
     margin-top: 20px;
 
-}
+} */
 .ProdutoView .Filtro-Nome,
 .ProdutoView .Filtro-Material {
     margin: 0;
@@ -35,6 +35,27 @@
     display: flex;
     
 }
+.ProdutoView .buttonRow .Filtro-Nome{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.ProdutoView .buttonRow .Filtro-Nome input{
+    border: 3px solid #555;
+    border-width: 2px;
+    border-radius: 20px;
+    background-image: url('searchv2.png');
+    background-position: 10px 1px;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: none;
+    padding-left: 40px;
+}
+
 .ProdutoView .btnFiltro,
 .ProdutoView .btnAdicionar {
     width: 15%;

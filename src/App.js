@@ -1,7 +1,6 @@
 import React from 'react';
 import './componentes/globals.css';
 import './script';
-
 import Header from './componentes/Header/Index';
 
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
