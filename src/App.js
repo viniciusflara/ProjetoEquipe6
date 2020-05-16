@@ -1,27 +1,12 @@
 import React from 'react';
-import './componentes/globals.css';
+import './globals.css';
 import './script';
-import Header from './componentes/Header/Index';
-
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
-
-import Login from './componentes/Login/Index';
-import ProdutoCrud from './componentes/ProdutoCrud/Index';
-import ProdutoView from './componentes/ProdutoView/Index';
-import UserCrud from './componentes/UserCrud/Index';
+import Routes from './routes'
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/produtocrud" exact component={ProdutoCrud} />
-          <Route path="/produtoview" exact component={ProdutoView} />
-          <Route path="/usercrud" exact component={UserCrud} />
-        </Switch>
-      </Router>
+        <Routes />
     </div>
   );
 }
