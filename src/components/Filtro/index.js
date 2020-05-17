@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-export default function Filtro() {
+function Filtro() {
     return (
         <div className="showFiltro" id="showFiltro">
         <div className="Filtro">
@@ -24,3 +24,5 @@ export default function Filtro() {
     </div>
     )
 }
+
+export default Filtro;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Index.css';
 import { NavLink } from 'react-router-dom';
-import Filtro from './Filtro'
+import Filtro  from '../../components/Filtro/index'
 
 const DATA = [{
     id: '123',
