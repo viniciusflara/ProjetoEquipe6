@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Index.css';
-import Corpo from './corpo';
-import data from './data';
+import Corpo from '../../components/Login/corpo';
+import data from '../../components/Login/data';
 
 class Login extends Component {
     
