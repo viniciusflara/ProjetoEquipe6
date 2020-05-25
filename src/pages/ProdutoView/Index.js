@@ -1,27 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import './Index.css';
 import { NavLink } from 'react-router-dom';
 import Filtro  from '../../components/Filtro/index'
-
-const DATA = [{
-    id: '123',
-    name: 'Espada Longa',
-    Tipo: 'Arma',
-    Material: 'Ferro',
-    Subtipo: 'Armas corpo-a-corpo'
-}, {
-    id: '456',
-    name: 'Arco Recurvo',
-    Tipo: 'Arma',
-    Material: 'Madeira',
-    Subtipo: 'Armas à distância'
-}, {
-    id: '789',
-    name: 'Escudo',
-    Tipo: 'Equipamento',
-    Material: 'Ferro',
-    Subtipo: 'Corpo-a-corpo'
-}]
+import DATA from './data'
 
 function Lista({ data }) {
     console.log(data);
@@ -36,10 +17,12 @@ function Lista({ data }) {
 }
 
 
-function ProdutoView() {
+function ProdutoView(props) {
+    console.log(props);
     const [data, setData] = useState(DATA);
     const [filtro, setFiltro] = useState(false);
     const produtoList = data.map(data => <Lista key={data.id} data={data} />)
+    
     let textButton = '';
 
     if (filtro) {
@@ -47,6 +30,18 @@ function ProdutoView() {
     } else {
         textButton = 'Filtro';
     }
+    useEffect(
+        
+        () => { if (props.location.state) {
+            const newData = [...data]
+            console.log('antes ' + newData)
+            newData.push(props.location.state.dado)
+            setData(newData)
+            console.log('depois ' + newData)}
+        }, [props.location.state]
+        
+    )
+
 
     return (
         <div className="ProdutoView">
