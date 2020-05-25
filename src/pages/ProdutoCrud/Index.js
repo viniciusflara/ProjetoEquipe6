@@ -98,7 +98,7 @@ class ProdutoCrud extends Component {
 
             <button type="submit">Cadastrar</button>
             <Link to={"/ProdutoView"}>
-              <button class="button">Voltar</button>
+              <button className="button-voltar">Voltar</button>
             </Link>
             
           </form>
