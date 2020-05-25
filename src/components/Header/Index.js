@@ -8,7 +8,7 @@ function Header() {
     return (
         <div className="Header">
             <Navbar expand="lg">
-                <NavLink exact to="/"><Navbar.Brand id="bulldog"><img src="./img/370-3704543_man-at-arms-blacksmith-blacksmith-silhouette-clip-art.png"/>Online Blacksmith</Navbar.Brand></NavLink>
+                <NavLink exact to="/"><Navbar.Brand id="bulldog"><img src="./img/logo.png"/>Online Blacksmith</Navbar.Brand></NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto links">

@@ -41,20 +41,20 @@ function Login() {
     } 
     
     return (
-        <div class='overlay'>
-            <div class='container'>
-                <div class='login-box'>
+        <div className='overlay'>
+            <div className='container'>
+                <div className='login-box'>
                     
                     <h1>Online Blacksmith</h1>
                     
                     {validation === false ? 
-                        <div class='validation'>
+                        <div className='validation'>
                             <label>Dados Incorretos</label>
                         </div> 
                         : null}
                     
-                    <div class='textbox'>
-                        <i class="fas fa-user"></i>
+                    <div className='textbox'>
+                        <i className="fas fa-user"></i>
                         <input 
                             type='text' 
                             placeholder='Usuário'
@@ -63,8 +63,8 @@ function Login() {
                         </input>
                     </div>
 
-                    <div class='textbox'>
-                        <i class="fas fa-lock"></i>
+                    <div className='textbox'>
+                        <i className="fas fa-lock"></i>
                         <input 
                             type='password' 
                             placeholder='Senha'
@@ -75,14 +75,14 @@ function Login() {
                 
                     <Link>
                         <button 
-                            class='button' 
+                            className='button' 
                             onClick={validate}
                             >Login
                         </button>
                     </Link>
                 
                     <Link to={'/usercrud'}>
-                        <button class='button'>Cadastre-se</button>
+                        <button className='button'>Cadastre-se</button>
                     </Link>
                 </div>
             </div>
