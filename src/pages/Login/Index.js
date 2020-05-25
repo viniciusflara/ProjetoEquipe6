@@ -1,48 +1,94 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import './Index.css';
-import Corpo from '../../components/Login/corpo';
-import data from '../../components/Login/data';
+import data from './data';
+import { Link } from 'react-router-dom';
 
-class Login extends Component {
+function Login() {
     
-    constructor() {
-        super() 
-        
-        this.state = {
-            data: data,
-            usuario:'',
-            senha:''
-        }
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [database, setData] = useState(data);
+    const [validation, setValidation] = useState();
+
+    
+    const handleUsernameChange = event => {
+        setUsername(event.target.value);
     }
 
-    
-    entrar = () => {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        let validacao = false;
+    const handlePasswordChange =  event => {
+        setPassword(event.target.value);
+    }
+
+    const validate = () => {
+
+        let userValidation = false;
         
-        this.state.data.map(dado => {
-            if (username === dado.username && password === dado.password) {
-                validacao = !validacao;
-                return validacao;
-        
+        database.map(user => {
+            if (username === user.username && password === user.password) {
+                userValidation = true
             }
         })
-            validacao ? window.location.href = '/produtoview' : alert("Dados Incorretos");
-    }
-
-
-    cadastrar = () => window.location.href = '/usercrud';
     
+        if (userValidation) {
+            setValidation(true)
+
+        } else {
+            setValidation(false)
+            setUsername('')
+            setPassword('')
+        }
+        console.log(validation)
+    } 
     
-    render() {
-        return (
-            <Corpo 
-            entrar={this.entrar} 
-            cadastrar={this.cadastrar}
-            />
-        );
-    }
+    return (
+        <div class='overlay'>
+            <div class='container'>
+                <div class='login-box'>
+                    
+                    <h1>Online Blacksmith</h1>
+                    
+                    {validation === false ? 
+                        <div class='validation'>
+                            <label>Dados Incorretos</label>
+                        </div> 
+                        : null}
+                    
+                    <div class='textbox'>
+                        <i class="fas fa-user"></i>
+                        <input 
+                            type='text' 
+                            placeholder='Usuário'
+                            onChange={handleUsernameChange}
+                            value={username}>
+                        </input>
+                    </div>
+
+                    <div class='textbox'>
+                        <i class="fas fa-lock"></i>
+                        <input 
+                            type='password' 
+                            placeholder='Senha'
+                            onChange={handlePasswordChange}
+                            value={password}>
+                        </input>
+                    </div>
+                
+                    <Link>
+                        <button 
+                            class='button' 
+                            onClick={validate}
+                            >Login
+                        </button>
+                    </Link>
+                
+                    <Link to={'/usercrud'}>
+                        <button class='button'>Cadastre-se</button>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default Login;
+
+export default Login
