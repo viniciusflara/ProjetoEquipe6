@@ -48,64 +48,66 @@ function ProdutoCrud() {
 
   return (
     <div className="ProdutoCrud">
-      <form className="register-box" onSubmit={handleSubmit}>
+      <div className='cinza'>
+        <form className="register-box" onSubmit={handleSubmit}>
 
-        <h1>Cadastre um novo produto</h1>
-        <div className="erro">
-          {erro}
-        </div>
-
-        <div className="todos-inputs">
-          <div className="inputs">
-            <label>Nome: </label>
-            <input
-              type="text"
-              value={name}
-              onChange={handleProductnameChange}
-              placeholder="Ex.: espada, escudo,..."
-              name="nome"
-            />
+          <h1>Cadastre um novo produto</h1>
+          <div className="erro">
+            {erro}
           </div>
 
-          <div className="inputs">
-            <label>Material: </label>
-            <input
-              type="text"
-              value={material}
-              onChange={handleMaterialChange}
-              placeholder="Ex.: madeira, ferro,..."
-              name="material" />
+          <div className="todos-inputs">
+            <div className="inputs">
+              <label>Nome: </label>
+              <input
+                type="text"
+                value={name}
+                onChange={handleProductnameChange}
+                placeholder="Ex.: espada, escudo,..."
+                name="nome"
+              />
+            </div>
+
+            <div className="inputs">
+              <label>Material: </label>
+              <input
+                type="text"
+                value={material}
+                onChange={handleMaterialChange}
+                placeholder="Ex.: madeira, ferro,..."
+                name="material" />
+            </div>
+
+            <div className="inputs">
+              <label>Tipo: </label>
+              <select name="tipo" value={tipo} onChange={handleTypeChange}>
+                <option value="">Selecione</option>
+                <option value="Arma">Arma</option>
+                <option value="Armadura">Armadura</option>
+                <option value="Equipamento">Equipamento</option>
+              </select>
+            </div>
+
+            <div className="inputs">
+              <label>Subtipo: </label>
+              <select name="subtipo" value={subtipo} onChange={handleSubtypeChange}>
+                <option value="">Selecione</option>
+                <option value="Arma corpo-a-corpo">Arma corpo-a-corpo</option>
+                <option value="Arma à distância">Arma à distância</option>
+                <option value="Armadura leve">Armadura leve</option>
+                <option value="Armadura pesada">Armadura pesada</option>
+                <option value="Escudo">Escudo</option>
+              </select>
+            </div>
           </div>
 
-          <div className="inputs">
-            <label>Tipo: </label>
-            <select name="tipo" value={tipo} onChange={handleTypeChange}>
-              <option value="">Selecione</option>
-              <option value="Arma">Arma</option>
-              <option value="Armadura">Armadura</option>
-              <option value="Equipamento">Equipamento</option>
-            </select>
-          </div>
+          <button type="submit">Cadastrar</button>
+          <Link to={"/ProdutoView"}>
+            <button className="button-voltar">Voltar</button>
+          </Link>
 
-          <div className="inputs">
-            <label>Subtipo: </label>
-            <select name="subtipo" value={subtipo} onChange={handleSubtypeChange}>
-              <option value="">Selecione</option>
-              <option value="Arma corpo-a-corpo">Arma corpo-a-corpo</option>
-              <option value="Arma à distância">Arma à distância</option>
-              <option value="Armadura leve">Armadura leve</option>
-              <option value="Armadura pesada">Armadura pesada</option>
-              <option value="Escudo">Escudo</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit">Cadastrar</button>
-        <Link to={"/ProdutoView"}>
-          <button className="button-voltar">Voltar</button>
-        </Link>
-
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

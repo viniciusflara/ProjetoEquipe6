@@ -20,7 +20,7 @@ const DATA = [
     Material: 'Ferro',
     Subtipo: 'Corpo-a-corpo'
 }
-
+    
 ]
 
 export default DATA

@@ -48,10 +48,9 @@ function Login() {
         <div className='corpoLogin'>
             <div className='overlay'>
                 <div className='container'>
+                    <img className='image' src='../img/logo.png'></img>
                     <div className='login-box'>
-                        
                         <h1>Online Blacksmith</h1>
-                        
                         {validation === false ? 
                             <div className='validation'>
                                 <label>Dados Incorretos</label>
