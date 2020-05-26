@@ -24,12 +24,6 @@
     border: none;
     border-radius: 20px;
 }
-
-.ProdutoView .Filtro p,
-.ProdutoView .Filtro h3 {
-    color: white;
-    margin: 0;
-}
 .ProdutoView .buttonRow {
     width: 100%;
     display: flex;

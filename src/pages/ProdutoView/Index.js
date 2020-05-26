@@ -1,7 +1,7 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import './Index.css';
 import { NavLink } from 'react-router-dom';
-import Filtro  from '../../components/Filtro/index'
+import Filtro from '../../components/Filtro/index'
 import DATA from './data'
 
 function Lista({ data }) {
@@ -22,7 +22,7 @@ function ProdutoView(props) {
     const [data, setData] = useState(DATA);
     const [filtro, setFiltro] = useState(false);
     const produtoList = data.map(data => <Lista key={data.id} data={data} />)
-    
+
     let textButton = '';
 
     if (filtro) {
@@ -31,15 +31,17 @@ function ProdutoView(props) {
         textButton = 'Filtro';
     }
     useEffect(
-        
-        () => { if (props.location.state) {
-            const newData = [...data]
-            console.log('antes ' + newData)
-            newData.push(props.location.state.dado)
-            setData(newData)
-            console.log('depois ' + newData)}
+
+        () => {
+            if (props.location.state) {
+                const newData = [...data]
+                console.log('antes ' + newData)
+                newData.push(props.location.state.dado)
+                setData(newData)
+                console.log('depois ' + newData)
+            }
         }, [props.location.state]
-        
+
     )
 
 
@@ -68,7 +70,6 @@ function ProdutoView(props) {
                     {produtoList}
                 </tbody>
             </table>
-
 
 
 

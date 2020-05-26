@@ -1,10 +1,10 @@
-label{
+.corpoUser label{
     display: flex;
     flex-direction: column;
     margin-bottom:10px;
   }
 
-  input{
+  .corpoUser input{
     height:40px;
     font-size:18px;
     border: 1px solid #ddd;
@@ -12,13 +12,13 @@ label{
     border-radius:4px;
     margin-top:5px;
     width:400px;
-
-    &:focus{
-      border: 1px solid red;
-    }
   }
+  .corpoUser input:focus{
+      border: 1px solid red;
+  }
+  
 
-  button{
+  .corpoUser button{
     cursor: pointer;
     background:darkblue;
     border: none;
@@ -29,7 +29,7 @@ label{
     transition: all 300ms;
   }
 
-  button:hover{
+  .corpoUser button:hover{
     filter: brightness(85%);
   }
   .corpoUser {
