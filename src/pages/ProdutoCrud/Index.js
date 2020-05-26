@@ -1,123 +1,113 @@
-import React, {Component} from 'react';
-import { Link , useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Index.css';
-import DATA from '../ProdutoView/data'
 
-class ProdutoCrud extends Component {
-    constructor(props) {
-       
-        super(props)
+function ProdutoCrud() {
 
-        this.state= {
-            name:'',
-            material:'',
-            tipo:'',
-            subtipo:'',
-            data: DATA
-        }
-        this.handleProductnameChange = this.handleProductnameChange.bind(this)
-        this.handleMaterialChange = this.handleMaterialChange.bind(this)
-        this.handleTypeChange = this.handleTypeChange.bind(this)
-        this.handleSubtypeChange = this.handleSubtypeChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+  const [name, setName] = useState('');
+  const [material, setMaterial] = useState('');
+  const [tipo, setTipo] = useState('');
+  const [subtipo, setSubtipo] = useState('');
+  const [erro, setErro] = useState('');
 
+  const history = useHistory();
 
-  
-  handleProductnameChange = event => {
-      this.setState({
-        name: event.target.value
-      })
+  const handleProductnameChange = event => {
+    setName(event.target.value);
   }
 
-  handleMaterialChange = event => {
-    this.setState({
-      material: event.target.value
-    })
+  const handleMaterialChange = event => {
+    setMaterial(event.target.value);
   }
 
-  handleTypeChange = event => {
-    this.setState({
-      tipo: event.target.value
-    })
+  const handleTypeChange = event => {
+    setTipo(event.target.value);
   }
 
-  handleSubtypeChange = event => {
-    this.setState({
-      subtipo: event.target.value
-    })
+  const handleSubtypeChange = event => {
+    setSubtipo(event.target.value);
   }
 
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
     const dado = {
-      name: this.state.name,
-      Tipo: this.state.tipo,
-      Material: this.state.material, 
-      Subtipo: this.state.subtipo
+      name: name,
+      Tipo: tipo,
+      Material: material,
+      Subtipo: subtipo
     }
-    
-    this.props.history.push({pathname: '/produtoview', state:{dado:dado}})
+    if (name && material && tipo && subtipo) {
+      history.push({ pathname: '/produtoview', state: { dado: dado } });
+    } else
+      handleError();
   }
 
-  render() {
-    const {name, material, tipo, subtipo} = this.state
-    return(
-        <div className="ProdutoCrud">
-          <form onSubmit={this.handleSubmit}>
+  const handleError = () => {
+    setErro('*Preencha todos os campos*');
+  }
 
-            <div className="name-input">
-            {/* <label>Nome: </label> */}
-            Nome: <input 
-                    type="text"
-                    value={name}
-                    onChange={this.handleProductnameChange}
-                    placeholder="Ex.: espada, escudo,..." 
-                    name="nome" 
-                    />
-            </div>
+  return (
+    <div className="ProdutoCrud">
+      <form className="register-box" onSubmit={handleSubmit}>
 
-            <div className="material-input">
-            {/* <label>Material: </label> */}
-            Material: <input 
-                        type="text" 
-                        value={material}
-                        onChange={this.handleMaterialChange}
-                        placeholder="Ex.: madeira, ferro,..."  
-                        name="material"/>
-            </div>
-
-            <div className="type-choice">
-                Tipo:
-                <select name="tipo" value={tipo} onChange={this.handleTypeChange}>
-                    <option value="">Selecione</option>
-                    <option value="1">Armas</option>
-                    <option value="2">Armaduras</option>
-                    <option value="3">Equipamentos</option>
-                </select>
-            </div>
-
-            <div className="subtype-choice">
-                Subtipo:
-                <select name="subtipo" value={subtipo} onChange={this.handleSubtypeChange}>
-                    <option value="">Selecione</option>
-                    <option value="1">Armas corpo-a-corpo</option>
-                    <option value="2">Armas à distância</option>
-                    <option value="3">Armaduras leves</option>
-                    <option value="4">Armaduras pesadas</option>
-                    <option value="5">Escudos</option>
-                </select>
-            </div>
-
-            <button type="submit">Cadastrar</button>
-            <Link to={"/ProdutoView"}>
-              <button className="button-voltar">Voltar</button>
-            </Link>
-            
-          </form>
+        <h1>Cadastre um novo produto</h1>
+        <div className="erro">
+          {erro}
         </div>
-    );
-  }
+
+        <div className="todos-inputs">
+          <div className="inputs">
+            <label>Nome: </label>
+            <input
+              type="text"
+              value={name}
+              onChange={handleProductnameChange}
+              placeholder="Ex.: espada, escudo,..."
+              name="nome"
+            />
+          </div>
+
+          <div className="inputs">
+            <label>Material: </label>
+            <input
+              type="text"
+              value={material}
+              onChange={handleMaterialChange}
+              placeholder="Ex.: madeira, ferro,..."
+              name="material" />
+          </div>
+
+          <div className="inputs">
+            <label>Tipo: </label>
+            <select name="tipo" value={tipo} onChange={handleTypeChange}>
+              <option value="">Selecione</option>
+              <option value="Arma">Arma</option>
+              <option value="Armadura">Armadura</option>
+              <option value="Equipamento">Equipamento</option>
+            </select>
+          </div>
+
+          <div className="inputs">
+            <label>Subtipo: </label>
+            <select name="subtipo" value={subtipo} onChange={handleSubtypeChange}>
+              <option value="">Selecione</option>
+              <option value="Arma corpo-a-corpo">Arma corpo-a-corpo</option>
+              <option value="Arma à distância">Arma à distância</option>
+              <option value="Armadura leve">Armadura leve</option>
+              <option value="Armadura pesada">Armadura pesada</option>
+              <option value="Escudo">Escudo</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+        <Link to={"/ProdutoView"}>
+          <button className="button-voltar">Voltar</button>
+        </Link>
+
+      </form>
+    </div>
+  );
 }
 
 export default ProdutoCrud;
