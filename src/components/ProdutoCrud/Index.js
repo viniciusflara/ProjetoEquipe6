@@ -55,8 +55,6 @@ function ProdutoCrud() {
           <div className="erro">
             {erro}
           </div>
-
-          <div className="todos-inputs">
             <div className="inputs">
               <label>Nome: </label>
               <input
@@ -78,7 +76,8 @@ function ProdutoCrud() {
                 name="material" />
             </div>
 
-            <div className="inputs">
+            <div className='inputsEscolha'>
+            <div className="escolha">
               <label>Tipo: </label>
               <select name="tipo" value={tipo} onChange={handleTypeChange}>
                 <option value="">Selecione</option>
@@ -88,7 +87,7 @@ function ProdutoCrud() {
               </select>
             </div>
 
-            <div className="inputs">
+            <div className="escolha">
               <label>Subtipo: </label>
               <select name="subtipo" value={subtipo} onChange={handleSubtypeChange}>
                 <option value="">Selecione</option>
@@ -100,7 +99,6 @@ function ProdutoCrud() {
               </select>
             </div>
           </div>
-
           <button type="submit">Cadastrar</button>
           <Link to={"/ProdutoView"}>
             <button className="button-voltar">Voltar</button>
