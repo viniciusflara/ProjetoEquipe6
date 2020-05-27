@@ -1,6 +1,5 @@
 import React from 'react';
 import './globals.css';
-import './script';
 import Routes from './routes'
 
 function App() {
