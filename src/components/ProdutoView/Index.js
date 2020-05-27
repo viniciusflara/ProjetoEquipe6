@@ -1,11 +1,11 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import './Index.css';
 import { NavLink } from 'react-router-dom';
-import Filtro from '../../components/Filtro/index'
+import Filtro from '../Filtro/index'
 import DATA from './data'
+// import Header from '../../pages/Header/Index'
 
 function Lista({ data }) {
-    console.log(data);
     return (
         <tr key={data.id}>
             <th>{data.name}</th>
@@ -18,7 +18,6 @@ function Lista({ data }) {
 
 
 function ProdutoView(props) {
-    console.log(props);
     const [data, setData] = useState(DATA);
     const [filtro, setFiltro] = useState(false);
     const produtoList = data.map(data => <Lista key={data.id} data={data} />)
@@ -30,19 +29,18 @@ function ProdutoView(props) {
     } else {
         textButton = 'Filtro';
     }
-    useEffect(
+    // useEffect(
+    //     () => {
+    //         if (props.location.state) {
+    //             const newData = [...data]
+    //             console.log('antes ' + newData)
+    //             newData.push(props.location.state.dado)
+    //             setData(newData)
+    //             console.log('depois ' + newData)
+    //         }
+    //     }, [props.location.state]
 
-        () => {
-            if (props.location.state) {
-                const newData = [...data]
-                console.log('antes ' + newData)
-                newData.push(props.location.state.dado)
-                setData(newData)
-                console.log('depois ' + newData)
-            }
-        }, [props.location.state]
-
-    )
+    // )
 
 
     return (
@@ -53,12 +51,12 @@ function ProdutoView(props) {
                     <input type="text" placeholder="Buscar..." name="nome"></input>
                 </div>
                 <button className="btnFiltro" onClick={() => { setFiltro(!filtro) }}>{textButton}</button>
-                <NavLink activeClassName="chosen" exact to="/produtocrud" className="btnAdicionar">+ Adicionar Produto</NavLink>
+                {/* <NavLink activeClassName="chosen" exact to="/produtocrud" className="btnAdicionar">+ Adicionar Produto</NavLink> */}
             </div>
 
             {filtro && <Filtro />}
-            <table class="table">
-                <thead class="thead">
+            <table className="table">
+                <thead className="thead">
                     <tr>
                         <th scope="col">Produto</th>
                         <th scope="col">Tipo</th>
@@ -70,9 +68,6 @@ function ProdutoView(props) {
                     {produtoList}
                 </tbody>
             </table>
-
-
-
         </div>
     );
 }

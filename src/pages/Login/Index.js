@@ -32,7 +32,7 @@ function Login() {
     
         if (userValidation) {
             setValidation(true)
-            history.push('/produtoview')
+            history.push('/Header')
             
 
         } else {
@@ -41,8 +41,7 @@ function Login() {
             setPassword('')
         }
 
-    } 
-    console.log('c ' + validation)
+    }
 
     return (
         <div className='corpoLogin'>

@@ -42,7 +42,7 @@
     background-position: 10px 1px;
     background-repeat: no-repeat;
     background-size: 25px;
-    height: 30px;
+    height: 65%;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
@@ -52,10 +52,10 @@
 
 .ProdutoView .btnFiltro,
 .ProdutoView .btnAdicionar {
-    width: 15%;
+    width: 10%;
     border: none;
     border-radius: 20px;
-    height: 15%;
+    height: 80%;
     background-color: #414141;
     color: white;
     margin-top: 10px;
@@ -65,6 +65,7 @@
     margin-left: 0;
     margin-right: 0;
     text-decoration: none;
+    padding: 5px;
 }
 .ProdutoView .btnFiltro:hover,
 .ProdutoView .btnAdicionar:hover {
