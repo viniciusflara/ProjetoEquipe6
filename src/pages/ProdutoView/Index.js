@@ -10,6 +10,7 @@ function Lista({ data }) {
             <td>{data.Tipo}</td>
             <td>{data.Material}</td>
             <td>{data.Subtipo}</td>
+            <td>{data.Quantidade}</td>
         </tr>
     );
 }
@@ -60,6 +61,7 @@ function ProdutoView(props) {
                         <th scope="col">Tipo</th>
                         <th scope="col">Material</th>
                         <th scope="col">Subtipo</th>
+                        <th scope="col">Quantidade</th> 
                     </tr>
                 </thead>
                 <tbody>
