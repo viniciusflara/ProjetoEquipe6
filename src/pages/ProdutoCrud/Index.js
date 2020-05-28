@@ -37,7 +37,7 @@ function ProdutoCrud() {
       Subtipo: subtipo
     }
     if (name && material && tipo && subtipo) {
-      history.push({ pathname: '/produtoview', state: { dado: dado } });
+      history.push({ pathname: '/Header/produtoview', state: { dado: dado } });
     } else
       handleError();
   }

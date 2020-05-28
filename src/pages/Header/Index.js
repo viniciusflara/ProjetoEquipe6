@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
-// import { Navbar, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import './Index.css';
-import ProdutoView from '../../components/ProdutoView/Index'
-import UserCrud from '../../components/UserCrud/Index'
-import ProdutoCrud from '../../components/ProdutoCrud/Index'
-
-import { MenuList, MenuItem } from '@material-ui/core'
+import React from 'react';
+import { Link } from "react-router-dom"
+import { createBrowserHistory } from "history";
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -20,6 +14,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
@@ -27,6 +24,7 @@ import AddIcon from '@material-ui/icons/Add';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 const drawerWidth = 240;
+const history = createBrowserHistory();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,22 +88,18 @@ const useStyles = makeStyles((theme) => ({
     // padding: theme.spacing(3),
   },
   user: {
-      marginLeft: 950,
+    marginLeft: 950,
   },
   username: {
     marginTop: 8,
     marginLeft: 5,
-},
+  },
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
-  let content = null;
-  const [state, setState] = useState({home: true});
-
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -115,41 +109,6 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
-  const hadleHome = () => {
-       setState({home: true})
-    //   hadleContent();
-  }
-
-  const hadleUserCrud = () => {
-    setState({usercrud: true})
-    // hadleContent();
-}
-
-const hadleProdutoCrud = () => {
-    setState({produtocrud: true})
-    // hadleContent();
-}
-
-
-//   const hadleContent = () => {
-//       console.log('entrou')
-//       switch(state){
-//           case 'ProdutoView':
-//               content = (<ProdutoView/>);
-//               console.log('entrou')
-//               break;
-//           case 'ProdutoCrud':
-//               content = (<ProdutoCrud/>);
-//               console.log('entrou2')
-//               break;
-//           case 'UserCrud':
-//               content = (<UserCrud/>);
-//               console.log('entrou3')
-//               break;
-//           default:
-//               content = <h1>Waiting</h1>
-//       }
-//   }
 
   return (
     <div className={classes.root}>
@@ -173,105 +132,69 @@ const hadleProdutoCrud = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-              Online Blacksmith
+            Online Blacksmith
           </Typography>
-             <AccountCircleOutlinedIcon className={classes.user}/>
-             <h6 className={classes.username}>Reginaldo</h6>
+          <AccountCircleOutlinedIcon className={classes.user} />
+          <h6 className={classes.username}>Reginaldo</h6>
         </Toolbar>
       </AppBar>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
-        })}
-        classes={{
-          paper: clsx({
+        <Drawer
+          variant="permanent"
+          className={clsx(classes.drawer, {
             [classes.drawerOpen]: open,
             [classes.drawerClose]: !open,
-          }),
-        }}
-      >
-        <div className={classes.toolbar}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        {/* <List>
-          {['Home', 'Cadastrar Produto', 'Cadastrar Usuário'].map((text, index) => (
-            <ListItem button key={text} onClick={() => hadleContent()}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          })}
+          classes={{
+            paper: clsx({
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+            }),
+          }}
+        >
+          <div className={classes.toolbar}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          <Divider />
+          <List>
+            <ListItem
+              button
+              component={Link}
+              to="/produtoview"
+            >
+              <ListItemIcon><HomeIcon /></ListItemIcon>
+              <ListItemText>Home</ListItemText>
             </ListItem>
-          ))}
-        </List> */}
-        <MenuList>
-             <MenuItem onClick={() => hadleHome()}>
-            <ListItemIcon><HomeIcon /></ListItemIcon>
-              Home
-            </MenuItem>
-            <MenuItem onClick={() => hadleProdutoCrud()}>
-            <ListItemIcon><AddIcon /></ListItemIcon>
-              Cadastrar Produto
-            </MenuItem>
-            <MenuItem onClick={() => hadleUserCrud()}>
-            <ListItemIcon><PersonAddIcon /></ListItemIcon>
-              Cadastrar Usuário
-            </MenuItem>
-        </MenuList>
-        <Divider />
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+            <ListItem
+              button
+              component={Link}
+              to="/produtocrud"
+            >
+              <ListItemIcon><AddIcon /></ListItemIcon>
+              <ListItemText>Cadastrar Produto</ListItemText>
             </ListItem>
-          ))}
-        </List> */}
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
+            <ListItem
+              button
+              component={Link}
+              to="/usercrud"
+            >
+              <ListItemIcon><PersonAddIcon /></ListItemIcon>
+              <ListItemText>Cadastrar Usuário</ListItemText>
+            </ListItem>
+          </List>
+        </Drawer>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+    
+          {props.children}
+          {console.log('renderizei')}
 
-        {content}
-        {console.log('renderizei')}
-        
-
-          {state.home && <ProdutoView />}
-        {state.produtocrud && <ProdutoCrud />}
-        {state.usercrud && <UserCrud />}  
-
-        
-      </main>
+        </main>
     </div>
   );
 }
-
-
-
-
-
-
-// function Header() {
-//     return (
-//         <div className="Header">
-//             <Navbar expand="lg">
-//                 <NavLink exact to="/"><Navbar.Brand id="bulldog"><img src="./img/logo.png"/>Online Blacksmith</Navbar.Brand></NavLink>
-//                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-//                 <Navbar.Collapse id="basic-navbar-nav">
-//                     <Nav className="mr-auto links">
-//                         <NavLink activeClassName="chosen" exact to="/" className="mr-3">Login</NavLink>
-//                         <NavLink activeClassName="chosen" exact to="/produtocrud" className="mr-3">Cadastrar Produtos</NavLink>
-//                         <NavLink activeClassName="chosen" exact to="/produtoview" className="mr-3">Lista de Produtos</NavLink>
-//                         <NavLink activeClassName="chosen" exact to="/usercrud">Cadastro de Pessoas</NavLink>
-//                     </Nav>
-//                 </Navbar.Collapse>
-//             </Navbar>
-//         </div>
-//     );
-// }
-
-// export default Header;
 
 
 
