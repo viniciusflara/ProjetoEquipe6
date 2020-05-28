@@ -8,6 +8,7 @@ function ProdutoCrud() {
   const [material, setMaterial] = useState('');
   const [tipo, setTipo] = useState('');
   const [subtipo, setSubtipo] = useState('');
+  const [quantidade, setQuantidade] = useState('');
   const [erro, setErro] = useState('');
 
   const history = useHistory();
@@ -28,22 +29,27 @@ function ProdutoCrud() {
     setSubtipo(event.target.value);
   }
 
+  const handleQuantityChange = event => {
+    setQuantidade(event.target.value);
+  }
+
   const handleSubmit = event => {
     event.preventDefault();
     const dado = {
       name: name,
       Tipo: tipo,
       Material: material,
-      Subtipo: subtipo
+      Subtipo: subtipo,
+      Quantidade: quantidade
     }
     if (name && material && tipo && subtipo) {
-      history.push({ pathname: '/Header/produtoview', state: { dado: dado } });
+      history.push({ pathname: '/produtoview', state: { dado: dado } });
     } else
       handleError();
   }
 
   const handleError = () => {
-    setErro('*Preencha todos os campos*');
+    setErro('Preencha Todos os Campos');
   }
 
   return (
@@ -76,6 +82,16 @@ function ProdutoCrud() {
                 onChange={handleMaterialChange}
                 placeholder="Ex.: madeira, ferro,..."
                 name="material" />
+            </div>
+
+            <div className="inputs">
+              <label>Quantidade: </label>
+              <input
+                type="number"
+                value={quantidade}
+                onChange={handleQuantityChange}
+                placeholder="Somente número"
+                name="quantidade" />
             </div>
 
             <div className="inputs">
