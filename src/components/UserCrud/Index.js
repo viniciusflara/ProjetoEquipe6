@@ -46,56 +46,58 @@ function UserCrud(){
     function handleSubmit(e){
         e.preventDefault();
         let usuario = new Usuario(nome,classe,email,senha);
-       bd.gravar(usuario);
+        bd.gravar(usuario);
     }
 
     return(
     
     <>
     <div className="corpoUser">
-        <div className="UserCrud">
-            <h1>Crie sua conta</h1>
-        </div>
-        
-        <form onSubmit={handleSubmit}>
+        <div className='overlay'>
+            <div className="UserCrud">
+                <h1>Crie sua conta</h1>
+            </div>
             
-            <label htmlFor="nome">
-                Nome:
-                <input type="text" 
-                value={nome} 
-                onChange={e => setNome(e.target.value)}
-                placeholder="Seu nome"
-            />
-            </label>
-            <label htmlFor="classe">
-                Classe:
-                <input type="text" 
-                value={classe} 
-                onChange={e => setClasse(e.target.value)}
-                placeholder="Sua Classe"
-            />
-            </label>
-            <label htmlFor="email">
-                Email:
-                <input type="email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)}
-                placeholder="Seu email"
-            />
-            </label>
-            <label htmlFor="senha">
-                Senha:
-                <input type="password" 
-                value={senha} 
-                onChange={e => setSenha(e.target.value)}
-                placeholder="Sua senha"
-            />
-            </label>
-            <button type="submit" >Criar minha conta</button>
-        {/* </Form> */}
-    {/* </Container> */}
+            <form className='userForm'onSubmit={handleSubmit}>
+                
+                <label htmlFor="nome">
+                    Nome:
+                    <input type="text" 
+                    value={nome} 
+                    onChange={e => setNome(e.target.value)}
+                    placeholder="Seu nome"
+                />
+                </label>
+                <label htmlFor="classe">
+                    Classe:
+                    <input type="text" 
+                    value={classe} 
+                    onChange={e => setClasse(e.target.value)}
+                    placeholder="Sua Classe"
+                />
+                </label>
+                <label htmlFor="email">
+                    Email:
+                    <input type="email" 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)}
+                    placeholder="Seu email"
+                />
+                </label>
+                <label htmlFor="senha">
+                    Senha:
+                    <input type="password" 
+                    value={senha} 
+                    onChange={e => setSenha(e.target.value)}
+                    placeholder="Sua senha"
+                />
+                </label>
+                <button type="submit" >Criar minha conta</button>
+            {/* </Form> */}
+        {/* </Container> */}
 
-    </form>
+            </form>
+        </div>
     </div> 
     </>
     );
