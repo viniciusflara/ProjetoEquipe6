@@ -83,10 +83,6 @@ function Login() {
                             >Login
                         </button>
                     
-                    
-                        <Link to={'/usercrud'}>
-                            <button className='button'>Cadastre-se</button>
-                        </Link>
                     </div>
                 </div>
             </div>
