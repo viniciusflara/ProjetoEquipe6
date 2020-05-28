@@ -135,7 +135,7 @@ export default function MiniDrawer(props) {
             Online Blacksmith
           </Typography>
           <AccountCircleOutlinedIcon className={classes.user} />
-          <h6 className={classes.username}>Reginaldo</h6>
+          <h6 className={classes.username}>Admin</h6>
         </Toolbar>
       </AppBar>
         <Drawer
