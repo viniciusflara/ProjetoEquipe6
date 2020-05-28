@@ -1,6 +1,6 @@
 const DATA = [
-    {
-    id: '123',
+{
+    id: '1',
     name: 'Espada Longa',
     Tipo: 'Arma',
     Material: 'Ferro',
@@ -8,7 +8,7 @@ const DATA = [
     Quantidade: '5'
 }, 
 {
-    id: '456',
+    id: '2',
     name: 'Arco Recurvo',
     Tipo: 'Arma',
     Material: 'Madeira',
@@ -16,7 +16,7 @@ const DATA = [
     Quantidade: '3'
 }, 
 {
-    id: '789',
+    id: '3',
     name: 'Escudo',
     Tipo: 'Equipamento',
     Material: 'Ferro',

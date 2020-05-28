@@ -38,9 +38,9 @@ function ProdutoView(props) {
                 console.log('depois ' + newData)
             }
         }, [props.location.state]
-
     )
 
+    
 
     return (
         <div className="ProdutoView">

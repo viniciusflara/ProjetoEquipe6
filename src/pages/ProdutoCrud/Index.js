@@ -36,6 +36,7 @@ function ProdutoCrud() {
   const handleSubmit = event => {
     event.preventDefault();
     const dado = {
+      id: toString(Math.random(4,10000)),
       name: name,
       Tipo: tipo,
       Material: material,
