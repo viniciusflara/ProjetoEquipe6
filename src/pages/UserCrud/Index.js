@@ -55,7 +55,7 @@ function UserCrud(){
     <div className="corpoUser">
         <div className='overlay'>
             <div className="UserCrud">
-                <h1>Crie sua conta</h1>
+                <h1>Cadastre o Usuário</h1>
             </div>
             
             <form className='userForm'onSubmit={handleSubmit}>
@@ -92,9 +92,7 @@ function UserCrud(){
                     placeholder="Sua senha"
                 />
                 </label>
-                <button type="submit" >Criar minha conta</button>
-            {/* </Form> */}
-        {/* </Container> */}
+                <button type="submit" >Cadastrar</button>
 
             </form>
         </div>
