@@ -23,21 +23,22 @@
 
   .corpoUser button{
     cursor: pointer;
-    background:black;
+    background: #333333;
     border: none;
     color: #fff;
     padding: 10px 20px;
     border-radius: 4px;
     font-weight: 700;
-    transition: all 300ms;
+    transition: 0.25s;
   }
 
   .corpoUser button:hover{
-    filter: brightness(85%);
+    /* filter: brightness(85%); */
+    background: #737373;
   }
   .corpoUser {
     max-width:450px;
-    background:#eee;
+    background:#e6e6e6;
     margin: 30px auto;
     padding: 30px;
     border-radius: 4px;
