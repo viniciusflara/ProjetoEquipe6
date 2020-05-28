@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { Navbar, Nav } from 'react-bootstrap';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Index.css';
 import ProdutoView from '../../components/ProdutoView/Index'
 import UserCrud from '../../components/UserCrud/Index'
@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    // padding: theme.spacing(3),
   },
   user: {
       marginLeft: 950,
@@ -116,7 +116,7 @@ export default function MiniDrawer() {
   };
 
   const hadleHome = () => {
-      setState({home: true})
+       setState({home: true})
     //   hadleContent();
   }
 
@@ -207,7 +207,7 @@ const hadleProdutoCrud = () => {
           ))}
         </List> */}
         <MenuList>
-            <MenuItem onClick={() => hadleHome()}>
+             <MenuItem onClick={() => hadleHome()}>
             <ListItemIcon><HomeIcon /></ListItemIcon>
               Home
             </MenuItem>
@@ -235,11 +235,11 @@ const hadleProdutoCrud = () => {
 
         {content}
         {console.log('renderizei')}
-        {/* <ProdutoView/> */}
+        
 
-        {state.home && <ProdutoView />}
+          {state.home && <ProdutoView />}
         {state.produtocrud && <ProdutoCrud />}
-        {state.usercrud && <UserCrud />}
+        {state.usercrud && <UserCrud />}  
 
         
       </main>

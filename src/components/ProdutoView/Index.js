@@ -3,6 +3,7 @@ import './Index.css';
 import { NavLink } from 'react-router-dom';
 import Filtro from '../Filtro/index'
 import DATA from './data'
+
 // import Header from '../../pages/Header/Index'
 
 function Lista({ data }) {
@@ -55,7 +56,8 @@ function ProdutoView(props) {
             </div>
 
             {filtro && <Filtro />}
-            <table className="table">
+            <div className="overflow-auto">
+            <table className="table table-striped table-bordered table-sm" id="dtHorizontalExample" cellspacing="0">
                 <thead className="thead">
                     <tr>
                         <th scope="col">Produto</th>
@@ -68,6 +70,7 @@ function ProdutoView(props) {
                     {produtoList}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 }
