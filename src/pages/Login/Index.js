@@ -32,7 +32,7 @@ function Login() {
     
         if (userValidation) {
             setValidation(true)
-            history.push('/Header')
+            history.push('/produtoview')
             
 
         } else {
