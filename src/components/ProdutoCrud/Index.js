@@ -48,13 +48,15 @@ function ProdutoCrud() {
 
   return (
     <div className="ProdutoCrud">
-      <div className='cinza'>
-        <form className="register-box" onSubmit={handleSubmit}>
+      <div className="register-box">
+        <form className="inside-box" onSubmit={handleSubmit}>
 
           <h1>Cadastre um novo produto</h1>
           <div className="erro">
             {erro}
           </div>
+
+          <div className="all-inputs">
             <div className="inputs">
               <label>Nome: </label>
               <input
@@ -76,8 +78,7 @@ function ProdutoCrud() {
                 name="material" />
             </div>
 
-            <div className='inputsEscolha'>
-            <div className="escolha">
+            <div className="inputs">
               <label>Tipo: </label>
               <select name="tipo" value={tipo} onChange={handleTypeChange}>
                 <option value="">Selecione</option>
@@ -87,7 +88,7 @@ function ProdutoCrud() {
               </select>
             </div>
 
-            <div className="escolha">
+            <div className="inputs">
               <label>Subtipo: </label>
               <select name="subtipo" value={subtipo} onChange={handleSubtypeChange}>
                 <option value="">Selecione</option>
@@ -99,10 +100,13 @@ function ProdutoCrud() {
               </select>
             </div>
           </div>
-          <button type="submit">Cadastrar</button>
+
+          <div className="all-buttons">
+          <button className="button-cadastrar" type="submit">Cadastrar</button>
           <Link to={"/ProdutoView"}>
             <button className="button-voltar">Voltar</button>
           </Link>
+          </div>
 
         </form>
       </div>
