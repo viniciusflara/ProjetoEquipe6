@@ -45,14 +45,14 @@
     height: 65%;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 80%;
     margin: none;
     padding-left: 40px;
 }
 
 .ProdutoView .btnFiltro,
 .ProdutoView .btnAdicionar {
-    width: 10%;
+    width: 20%;
     border: none;
     border-radius: 20px;
     height: 80%;
@@ -63,9 +63,7 @@
     outline: none; 
     text-align: center;
     margin-left: 0;
-    margin-right: 0;
     text-decoration: none;
-    padding: 5px;
 }
 .ProdutoView .btnFiltro:hover,
 .ProdutoView .btnAdicionar:hover {
@@ -73,7 +71,6 @@
 }
 .ProdutoView .btnFiltro {
     margin-right: 20px;
-    margin-left: 20px;
 }
 .ProdutoView .produtoTitulo {
     display: flex;
